@@ -1,29 +1,45 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>video</title>
-</head>
-<body>
+  </head>
+  <body>
     <style>
-  .reel-video {
-    /* Adjusts to the container width */
-    width: 100%; 
-    /* Keeps it from getting too huge on a desktop screen */
-    max-width: 400px; 
-    /* Maintains the vertical aspect ratio automatically */
-    height: auto; 
-    /* Optional: adds rounded corners like Instagram */
-    border-radius: 15px;
-    display: block;
-    margin: 20px auto; /* Centers the video on the page */
-  }
-</style>
-    <video class="reel-video" controls loop muted autoplay playsinline>
-        <source src="WhatsApp Video 2026-04-07 at 6.16.57 PM.mp4" type="video/mp4"> 
-        Your browser does not support this video
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        height: 100%; /* Ensures the page itself takes full height */
+        background-color: #000; /* Dark background like a real video app */
+        overflow: hidden; /* Prevents accidental scrolling */
+      }
 
-    </video>
-</body>
+      .video-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* 100% of the Viewport Height */
+        width: 100vw; /* 100% of the Viewport Width */
+      }
+
+      .reel-video {
+        height: 100%; /* Fills the container height */
+        width: auto; /* Keeps the width proportional */
+        max-width: 100%; /* Ensures it doesn't spill off the sides */
+        object-fit: cover; /* Optional: Crops slightly to fill the screen edges */
+      }
+    </style>
+
+    <div class="video-container">
+      <video class="reel-video" controls loop muted autoplay playsinline>
+        <source
+          src="WhatsApp Video 2026-04-07 at 6.16.57 PM.mp4"
+          type="video/mp4"
+        />
+        Your browser does not support this video
+      </video>
+    </div>
+  </body>
 </html>
